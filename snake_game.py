@@ -6,12 +6,11 @@ delay = 0.1
 #score
 score = 0
 high_score = 0
-#set up the screen
-turtle.setup(600,600)
-#set wn to the window object
-wn = turtle.screen()
+#set wn to the window object, set up screen
+wn = turtle.Screen()
 wn.title("snake game")
 wn.bgcolor("black")
+wn.setup(width=600,height=600)
 wn.tracer(0) #turns off screen updates
 #snake head
 head = turtle.Turtle()
@@ -67,10 +66,10 @@ def move():
          head.setx(x + 20)
 #keyboard commands
 wn.listen() #listens to screen/ window inputs
-wn.onkeypress(go_up, "pgup")
-wn.onkeypress(go_down, "pgdn")
-wn.onkeypress(go_left, "home")
-wn.onkeypress(go_right, "end")
+wn.onkeypress(go_up, "w")
+wn.onkeypress(go_down, "s")
+wn.onkeypress(go_left, "a")
+wn.onkeypress(go_right, "d")
 #main game loop
 while True:
     wn.update() #perform a turtle screen update, used when tracer is off
